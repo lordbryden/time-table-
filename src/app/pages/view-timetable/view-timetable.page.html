@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>View Timetable</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list *ngIf="timetable">
+        <ion-item *ngFor="let day of days">
+            <ion-label>{{ day }}</ion-label>
+            <ion-list>
+                <ion-item *ngFor="let slot of timetable[day]">
+                    <ion-label>
+                        {{ slot.startTime }} - {{ slot.endTime }} : {{ slot.subject }}
+                    </ion-label>
+                </ion-item>
+            </ion-list>
+        </ion-item>
+    </ion-list>
+    <ion-button expand="full" routerLink="/home">Back to Home</ion-button>
+</ion-content>

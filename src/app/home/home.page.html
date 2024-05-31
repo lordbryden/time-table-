@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>School Timetable</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-button expand="full" routerLink="/timetable/0">
+        Create Timetable
+    </ion-button>
+
+    <ion-list>
+        <ion-item *ngFor="let timetable of timetables">
+            <ion-label (click)="viewTimetable(timetable.id)">
+                {{ timetable.name }}
+            </ion-label>
+            <ion-button fill="clear" color="primary" (click)="editTimetable(timetable.id)">
+                Edit
+            </ion-button>
+        </ion-item>
+    </ion-list>
+</ion-content>
