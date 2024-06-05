@@ -10,7 +10,7 @@ import { TimetableService } from 'src/app/services/timetable.service';
 })
 export class TimetablePage implements OnInit {
 
-  days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday' , 'Sunday'];
   timetable: { [key: string]: any[] } = {};
   timetableName: string = '';
   timetableId: string | null = '';

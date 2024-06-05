@@ -1,22 +1,40 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title>School Timetable</ion-title>
-    </ion-toolbar>
-</ion-header>
-
 <ion-content>
-    <ion-button expand="full" routerLink="/timetable/0">
-        Create Timetable
-    </ion-button>
+
+    <!-- <ion-button (click)="scheduleNotifications()">schedule</ion-button> -->
+    <div class="titleclass">
+        <h1>School Time table </h1>
+    </div>
+    <ion-grid>
+        <ion-row>
+            <ion-col offset="5" size="5">
+                <div class="addtimtable" routerLink="/timetable/0">
+                    <ion-label>create time table</ion-label>
+
+                </div>
+            </ion-col>
+            <ion-col>
+                <ion-fab horizontal="end" class="fabclass" routerLink="/timetable/0">
+                    <ion-fab-button color="" size="small" class="fabbutton">
+                        <ion-icon name="add"></ion-icon>
+                    </ion-fab-button>
+                </ion-fab>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
 
     <ion-list>
-        <ion-item *ngFor="let timetable of timetables">
-            <ion-label (click)="viewTimetable(timetable.id)">
-                {{ timetable.name }}
-            </ion-label>
-            <ion-button fill="clear" color="primary" (click)="editTimetable(timetable.id)">
-                Edit
-            </ion-button>
-        </ion-item>
+        <ion-card *ngFor="let timetable of timetables" class="cardClass">
+            <ion-item>
+                <ion-label (click)="viewTimetable(timetable.id)">
+                    {{ timetable.name }}
+                </ion-label>
+                <ion-button fill="clear" color="primary" (click)="editTimetable(timetable.id)">
+                    Edit
+                </ion-button>
+            </ion-item>
+        </ion-card>
+
     </ion-list>
 </ion-content>

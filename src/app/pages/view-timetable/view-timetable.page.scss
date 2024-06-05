@@ -1,0 +1,84 @@
+ion-input {
+    --padding-start: 0;
+    --padding-end: 0;
+}
+
+ion-button {
+    margin-top: 10px;
+}
+
+.addButton {
+    float: right;
+}
+
+.cardclass {
+    border: orange 0.5px solid;
+    margin-top: 2rem;
+    border-radius: 2rem;
+}
+
+.dayClass {
+    padding: 2.0rem;
+    font-size: 1.2rem;
+    color: black;
+    padding-bottom: 1rem;
+}
+
+.fabclass {
+    --background-color: orange;
+}
+
+.fabcontainer {
+    padding: 0;
+    margin: 0;
+    top: -0.5rem;
+    position: relative;
+}
+
+.buttonClass {
+    font-size: 0.7rem;
+    --border-radius: 2rem;
+}
+
+.time-input {
+    --color: black;
+    /* Set input text color to black */
+    --placeholder-color: rgba(0, 0, 0, 0.5);
+    /* Set placeholder text color to a lighter black */
+}
+
+.submitbuttonclass {
+    --background: rgb(139 104 39);
+    --background-hover: orange;
+    --background-activated: orange;
+    --background-focused: orange;
+    --color: white;
+    --border-radius: 50px;
+    --border: orange;
+    // --border-style: solid;
+    --border-width: 1px;
+    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+    --ripple-color: #9a64bb;
+    --padding-top: 10px;
+    --padding-bottom: 10px;
+    font-family: 'Inria Serif', serif;
+}
+
+.gridmargin {
+    margin: 0 1rem;
+}
+
+.divStyle {
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.listClass {
+    padding: 0;
+}
+
+.labelColor {
+    color: black;
+    font-size: 1.04rem;
+}

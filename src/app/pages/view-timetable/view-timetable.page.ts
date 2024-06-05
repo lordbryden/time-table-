@@ -9,15 +9,16 @@ import { TimetableService } from 'src/app/services/timetable.service';
 })
 export class ViewTimetablePage implements OnInit {
   timetable: any;
-  days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-
+  days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  timetableName : any;
   constructor(private route: ActivatedRoute, private timetableService: TimetableService) { }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       const timetable = this.timetableService.getTimetableById(id);
-      this.timetable = timetable.schedule
+      this.timetable = timetable.schedule;
+      this.timetableName = timetable.name;
     }
   }
 }

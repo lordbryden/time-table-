@@ -1,48 +1,16 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>Create Timetable</ion-title>
+        <ion-title>{{ timetableId === '0' ? 'Create Timetable' : 'Update Timetable' }}</ion-title>
+        <ion-buttons slot="start">
+            <ion-button>
+                <ion-back-button defaultHref="/home"></ion-back-button>
+
+            </ion-button>
+        </ion-buttons>
     </ion-toolbar>
 </ion-header>
 
-<!-- <ion-content>
-    <form (ngSubmit)="saveTimetable()">
-        <ion-item>
-            <ion-label position="floating">Timetable Name</ion-label>
-            <ion-input [(ngModel)]="timetableName" name="timetableName" required></ion-input>
-        </ion-item>
-        <ion-list>
-            <ion-item *ngFor="let day of days">
-                <div>
-                    <ion-label>{{ day }}</ion-label>
 
-                </div>
-                <ion-button expand="block" (click)="addTimeSlot(day)">Add Time Slot</ion-button>
-                <ion-list>
-                    <ion-item *ngFor="let slot of timetable[day]">
-                        <ion-grid>
-                            <ion-row>
-                                <ion-col size="4">
-                                    <ion-input [(ngModel)]="slot.startTime" name="{{ day }}_start_{{ slot.id }}" placeholder="Start Time" type="time"></ion-input>
-                                </ion-col>
-                                <ion-col size="4">
-                                    <ion-input [(ngModel)]="slot.endTime" name="{{ day }}_end_{{ slot.id }}" placeholder="End Time" type="time"></ion-input>
-                                </ion-col>
-                                <ion-col size="4">
-                                    <ion-input [(ngModel)]="slot.subject" name="{{ day }}_subject_{{ slot.id }}" placeholder="Subject"></ion-input>
-                                </ion-col>
-                                <ion-col size="12">
-                                    <ion-button color="danger" expand="block" (click)="removeTimeSlot(day, slot.id)">Remove</ion-button>
-                                </ion-col>
-                            </ion-row>
-                        </ion-grid>
-                    </ion-item>
-                </ion-list>
-            </ion-item>
-        </ion-list>
-        <ion-button expand="full" type="submit">{{ timetableId === '0' ? 'Save Timetable' : 'Update Timetable' }}</ion-button>
-    </form>
-</ion-content>
- -->
 
 <ion-content>
     <form (ngSubmit)="saveTimetable()">

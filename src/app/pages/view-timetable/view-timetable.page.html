@@ -1,21 +1,59 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title>View Timetable</ion-title>
+<ion-header no-lines>
+    <ion-toolbar no-lines>
+
+        <ion-title>{{ timetableName}}</ion-title>
+        <ion-buttons slot="start">
+            <ion-button>
+                <ion-back-button defaultHref="/home"></ion-back-button>
+
+            </ion-button>
+        </ion-buttons>
     </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
-    <ion-list *ngIf="timetable">
-        <ion-item *ngFor="let day of days">
-            <ion-label>{{ day }}</ion-label>
-            <ion-list>
-                <ion-item *ngFor="let slot of timetable[day]">
-                    <ion-label>
-                        {{ slot.startTime }} - {{ slot.endTime }} : {{ slot.subject }}
-                    </ion-label>
-                </ion-item>
+
+    <div *ngFor="let day of days">
+        <ion-card class="cardclass">
+
+            <div class="dayClass">
+                <ion-label>{{day}}</ion-label>
+
+            </div>
+            <ion-grid class="gridmargin">
+                <ion-row>
+                    <ion-col size="4" color="dark">
+                        <div class="divStyle">Start time</div>
+                    </ion-col>
+                    <ion-col size="4">
+                        <div class="divStyle">End time</div>
+
+                    </ion-col>
+                    <ion-col size="4">
+                        <div class="divStyle">Subject</div>
+
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <ion-list *ngFor="let slot of timetable[day]" class="listClass">
+                <ion-grid class="gridmargin">
+                    <ion-row>
+                        <ion-col size="4" class="custom-time-input">
+                            <ion-label class="labelColor">{{slot.startTime}}</ion-label>
+                        </ion-col>
+                        <ion-col size="4" class="custom-time-input">
+                            <ion-label class="labelColor">{{slot.endTime}}</ion-label>
+
+                        </ion-col>
+                        <ion-col size="4" class="custom-time-input">
+                            <ion-label class="labelColor">{{slot.subject}}</ion-label>
+                        </ion-col>
+
+                    </ion-row>
+                </ion-grid>
             </ion-list>
-        </ion-item>
-    </ion-list>
-    <ion-button expand="full" routerLink="/home">Back to Home</ion-button>
+        </ion-card>
+
+    </div>
 </ion-content>
